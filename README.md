@@ -12,9 +12,9 @@
 
 4.main.py
 #### 数据模块
-1.input_files（存取用户输入视频数据.mp4）
+1.input_files（存取用户输入视频数据.mp4/.png）
 
-2.output_files（存取用户输出视频数据.mp4）
+2.output_files（存取用户输出视频数据.mp4/.png）
 
 3.yolo_models（存取模型文件.pt）
 
