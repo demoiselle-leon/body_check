@@ -99,7 +99,7 @@ if __name__ == "__main__":
     tracker = HumanTracker()
 
     # 输入输出设置
-    input_video = "../input_files/input.mp4"  # 替换为你的视频路径
+    input_video = "../input_files/videos/input.mp4"  # 替换为你的视频路径
     output_video = "tracked_output"  # 自动选择扩展名
 
     # 执行追踪
