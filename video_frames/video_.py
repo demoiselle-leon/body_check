@@ -22,31 +22,14 @@ def process_video(video_path,output_folder='../input_files/images/frames'):
     print(f"总帧数：{frame_count}")
     print(f"时长：{duration:.2f}秒")
 
-    # 逐帧读取并保存
-    frame_number = 0
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-
-        # 保存帧为图像文件
-        frame_filename = os.path.join(output_folder, f"frame_{frame_number:04d}.jpg")
-        cv2.imwrite(frame_filename, frame)
-        frame_number += 1
-
-        # 显示进度
-        if frame_number % 10 == 0:
-            print(f"已处理 {frame_number}/{frame_count} 帧...")
-
-    # 释放资源
-    cap.release()
-    print(f"视频处理完成，共保存 {frame_number} 帧到 {output_folder} 文件夹")
+    return cap,[frame_width,frame_height,fps,frame_count,duration]
 
 if __name__ == "__main__":
     video_file = r"../input_files/videos/input.mp4"
-    
+
     # 先检查文件是否存在
     if not os.path.exists(video_file):
         print(f"错误：视频文件不存在 - {video_file}")
     else:
-        process_video(video_file)
+        print(process_video(video_file))
+
