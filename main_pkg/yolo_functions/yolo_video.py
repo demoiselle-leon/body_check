@@ -8,7 +8,7 @@ from pathlib import Path
 
 def detect_and_save_video(cap, model_path, file_name):
     current_file_path = os.path.abspath(__file__)
-    out_path = os.path.join(current_file_path, '..', '..', 'output_files', 'images', f'out_{file_name}')
+    out_path = os.path.join(current_file_path, '..', '..', 'output_files', 'videos', f'out_{file_name}')
     # 检查输出路径是否有效
     if Path(out_path).is_dir():
         raise ValueError("输出路径必须是文件路径（如'output.mp4'），不能是目录")
@@ -20,6 +20,7 @@ def detect_and_save_video(cap, model_path, file_name):
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = cap.get(cv2.CAP_PROP_FPS)
+    frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
     # 创建视频写入器（使用H264编码需要额外配置）
     fourcc = cv2.VideoWriter_fourcc(*'avc1')

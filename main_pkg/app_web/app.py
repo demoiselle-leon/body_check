@@ -115,10 +115,6 @@ def app_():
         with center_col:
             if st.button("开始识别", key="video_button", disabled=not uploaded_video):
                 with st.spinner("处理中..."):
-                    progress_bar = st.progress(0)
-
-                    # 处理视频并显示进度
-                    # st.video(process_video(sava_video_path,uploaded_video.name))
 
                     # 模拟处理结果
                     st.session_state.video_processed = process_video(sava_video_path,uploaded_video.name)
